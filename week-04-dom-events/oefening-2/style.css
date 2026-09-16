@@ -1,0 +1,12 @@
+.box {
+  padding: 20px;
+  margin: 10px;
+  background-color: #eee;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.box.active {
+  background-color: #007bff;
+  color: white;
+}

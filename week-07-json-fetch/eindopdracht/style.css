@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0;
+  background: #f1ece2;
+  color: #1a1a1a;
+}
+
+header {
+  background: #f7f3ea;
+  border-bottom: 6px double #1a1a1a;
+  padding: 2rem 1rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
+header h1::before,
+header h1::after {
+  content: "—";
+  margin: 0 0.5rem;
+  color: #888;
+  font-weight: 400;
+}
+
+header::after {
+  content: "DAGBLAD · EDITIE VAN VANDAAG · LOSSE NUMMERS € 2,50";
+  display: block;
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #1a1a1a;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: #555;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+#category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 2rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+#category-nav button {
+  padding: 0.4rem 1.2rem;
+  background: transparent;
+  color: #1a1a1a;
+  border: none;
+  border-right: 1px solid #ccc;
+  font-family: Georgia, serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+}
+
+#category-nav button:last-child {
+  border-right: none;
+}
+
+#category-nav button:hover {
+  background: #1a1a1a;
+  color: #f7f3ea;
+}
+
+#articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+#articles article {
+  background: #fdfbf5;
+  padding: 1.5rem 1.8rem;
+  border-top: 3px solid #1a1a1a;
+  border-bottom: 1px solid #d4ccba;
+  position: relative;
+}
+
+#articles span {
+  display: inline-block;
+  font-family: Georgia, serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #b91c1c;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+#articles h2 {
+  margin: 0 0 0.8rem;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1.15;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+}
+
+#articles p {
+  margin: 0;
+  line-height: 1.65;
+  font-size: 1rem;
+  color: #2c2c2c;
+  text-align: justify;
+  hyphens: auto;
+}
+
+#articles p::first-letter {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  float: left;
+  line-height: 0.9;
+  margin: 0.2rem 0.5rem 0 0;
+  color: #b91c1c;
+}

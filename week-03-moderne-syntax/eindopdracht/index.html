@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medewerker-profielpagina</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Medewerkers</h1>
+  </header>
+  <main>
+    <section class="form">
+      <h2>Nieuw profiel</h2>
+      <form id="profile-form">
+        <input type="text" id="name" placeholder="Naam">
+        <input type="text" id="role" placeholder="Functie">
+        <input type="text" id="department" placeholder="Afdeling">
+        <button type="submit">Voeg toe</button>
+      </form>
+    </section>
+    <section class="profiles">
+      <h2>Profielen</h2>
+      <div id="profiles-list"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

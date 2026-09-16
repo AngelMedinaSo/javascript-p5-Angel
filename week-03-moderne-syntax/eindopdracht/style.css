@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background: #f4f6f8;
+  color: #2b2f33;
+}
+
+header {
+  background: #2c5282;
+  color: white;
+  padding: 1.5rem 2rem;
+}
+
+header h1 {
+  margin: 0;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  gap: 2rem;
+}
+
+h2 {
+  margin-top: 0;
+  color: #2c5282;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+input {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2c5282;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  background: #2c5282;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2a4365;
+}
+
+#profiles-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+#profiles-list article {
+  background: white;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  border-left: 4px solid #2c5282;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+#profiles-list h3 {
+  margin: 0 0 0.5rem;
+  color: #2c5282;
+}
+
+#profiles-list p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
