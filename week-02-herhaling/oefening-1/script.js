@@ -6,23 +6,23 @@
 
 // 1. Schrijf een functie die twee getallen optelt en het resultaat teruggeeft
 function optellen(a, b) {
-  // TODO
+  return a + b;
 }
 
 // 2. Schrijf een functie die true teruggeeft als het getal even is, anders false
 function isEven(getal) {
-  // TODO
+  return getal % 2 === 0;
 }
 
 // 3. Schrijf een functie die een begroeting teruggeeft: 'Hallo, <naam>!'
 function groet(naam) {
-  // TODO
+  return naam.toUpperCase();
 }
 
 // 4. Schrijf een functie die celsius omrekent naar fahrenheit
 //    formule: celsius * 9 / 5 + 32
 function celsiusNaarFahrenheit(celsius) {
-  // TODO
+  return celsius * 9 / 5 + 32;
 }
 
 // Dit hoef je niet aan te passen — dit toont je resultaten in de DOM:

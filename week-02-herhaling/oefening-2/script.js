@@ -13,3 +13,32 @@
 
 // 3. Voeg een click event listener toe aan #greet-btn.
 //    Lees de waarde van #name-input uit en toon 'Hallo, <naam>!' in #greeting.
+const message = document.getElementById("message");
+const name = document.getElementById("name-input");
+const greet = document.getElementById("greeting");
+
+let isRed = false;
+
+document.getElementById("title").textContent = "WASSUP my guy?";
+
+document.getElementById("toggle-btn").addEventListener("click", function() {
+    if (isRed) {
+        message.style.color = "black";
+    } else {
+        message.style.color = "red";
+    }
+
+    isRed = !isRed;
+});
+
+document.getElementById("greet-btn").addEventListener("click", function() {
+    const userName = name.value.trim()
+
+    if (userName === "") {
+        greet.textContent = "schrijf eerst je naam op";
+        greet.style.color = "red";
+    } else {
+        greet.textContent = `Hallo, ${userName.toUpperCase()}!`;
+        greet.style.color = "black";
+    }
+});
