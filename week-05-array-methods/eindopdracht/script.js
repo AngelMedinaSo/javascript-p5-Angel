@@ -13,13 +13,33 @@ const products = [
   { name: 'Desk organizer', category: 'Kantoor', price: 24, stock: true },
 ];
 
+const productsContainer = document.querySelector('#products');
+const counter = document.querySelector('#counter');
+const searchBar = document.querySelector('#search-bar');
+const sortLow = document.querySelector('#sort-low');
+const sortHigh = document.querySelector('#sort-high');
+
 let searchTerm = '';
 let sorting = '';
 
 const showProducts = (products) => {
   // Toon elk product als een <article> in #products
   // Laat in #counter de hoeveelheid producten zien
+  productsContainer.innerHTML = '';
+
+  for (const product of products) {
+    productsContainer.innerHTML += `
+      <article>
+        <h3>${product.name}</h3>
+        <p>€${product.price}</p>
+      </article>
+    `;
+  }
+
+  counter.textContent = `Aantal producten: ${products.length}`;
 };
+
+showProducts(products);
 
 const filterProducts = () => {
   // Maak een variabele 'filtered' aan door de products array te filteren op searchTerm
@@ -28,6 +48,18 @@ const filterProducts = () => {
   // Filter hier op sorting:
   // als sorting 'low' is, sorteer van laag naar hoog op prijs
   // als sorting 'high' is, sorteer van hoog naar laag op prijs
+
+  let filtered = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  if (sorting === 'low') {
+    filtered.sort((a, b) => a.price - b.price);
+  }
+
+  if (sorting === 'high') {
+    filtered.sort((a, b) => b.price - a.price);
+  }
 
   showProducts(filtered);
 };
@@ -40,5 +72,20 @@ const filterProducts = () => {
 
 // Maak een eventlistener voor de #sort-high button
 // Zet sorting op 'high' en roep filterProducts() aan
+
+searchBar.addEventListener('input', () => {
+  searchTerm = searchBar.value;
+  filterProducts();
+});
+
+sortLow.addEventListener('click', () => {
+  sorting = 'low';
+  filterProducts();
+});
+
+sortHigh.addEventListener('click', () => {
+  sorting = 'high';
+  filterProducts();
+});
 
 filterProducts();
