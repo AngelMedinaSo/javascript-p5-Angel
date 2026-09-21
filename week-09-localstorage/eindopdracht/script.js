@@ -27,11 +27,8 @@ const showItems = (items) => {
 
         <h2>${pokemon.name}</h2>
 
-        <button
-          class="favorite-btn"
-          ${isFavorite ? 'disabled' : ''}
-        >
-          ${isFavorite ? 'Favoriet' : 'Voeg toe aan favorieten'}
+        <button class="favorite-btn">
+          ${isFavorite ? 'Verwijder uit favorieten' : 'Voeg toe aan favorieten'}
         </button>
       </article>
     `;
@@ -41,16 +38,20 @@ const showItems = (items) => {
   // De index i vertelt je welke Pokémon bij welke knop hoort: items[i].name
   document.querySelectorAll('.favorite-btn').forEach((btn, i) => {
     btn.addEventListener('click', () => {
-      // Voeg items[i].name toe aan favorites
-      // Roep saveFavorites() aan
-      // Roep showItems(items) opnieuw aan
-
       const name = items[i].name;
 
-      favorites.push(name);
+      // Bonus: als de Pokémon al favoriet is, verwijder hem
+      // Anders voeg je hem toe
+      if (favorites.includes(name)) {
+        favorites = favorites.filter((favorite) => favorite !== name);
+      } else {
+        favorites.push(name);
+      }
 
+      // Sla de nieuwe favorites-array op in localStorage
       saveFavorites();
 
+      // Toon de lijst opnieuw zodat de knoptekst verandert
       showItems(items);
     });
   });
@@ -64,13 +65,12 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
     document.querySelector('#loading').textContent = '';
 
     // Sla data.results op in allPokemon, voeg het id toe via de index
-    // Roep showItems() aan met allPokemon
-
     allPokemon = data.results.map((pokemon, index) => ({
       ...pokemon,
       id: index + 1
     }));
 
+    // Roep showItems() aan met allPokemon
     showItems(allPokemon);
   })
   .catch(error => {
@@ -80,7 +80,6 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
 
 // Maak een eventlistener voor de #show-all button
 // Roep showItems() aan met allPokemon
-
 document.querySelector('#show-all').addEventListener('click', () => {
   showItems(allPokemon);
 });
@@ -88,7 +87,6 @@ document.querySelector('#show-all').addEventListener('click', () => {
 // Maak een eventlistener voor de #show-favorites button
 // Filter allPokemon op namen die in favorites staan (gebruik includes())
 // Roep showItems() aan met het gefilterde resultaat
-
 document.querySelector('#show-favorites').addEventListener('click', () => {
   const favoritePokemon = allPokemon.filter((pokemon) =>
     favorites.includes(pokemon.name)
