@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "title": "Jujutsu Kaisen",
+    "director": "Sunghoo Park",
+    "year": 2020,
+    "genre": "Action"
+  },
+  {
+    "title": "Naruto",
+    "director": "Hayato Date",
+    "year": 2002,
+    "genre": "Action"
+  },
+  {
+    "title": "Bleach",
+    "director": "Noriyuki Abe",
+    "year": 2004,
+    "genre": "Action"
+  },
+  {
+    "title": "Demon Slayer",
+    "director": "Haruo Sotozaki",
+    "year": 2019,
+    "genre": "Action"
+  },
+  {
+    "title": "Attack on Titan",
+    "director": "Tetsuro Araki",
+    "year": 2013,
+    "genre": "Dark Fantasy"
+  },
+  {
+    "title": "Black Clover",
+    "director": "Tatsuya Yoshihara",
+    "year": 2017,
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Mushoku Tensei",
+    "director": "Manabu Okamoto",
+    "year": 2021,
+    "genre": "Isekai"
+  }
+]
