@@ -36,9 +36,9 @@ const showItems = (items) => {
 
   // Voeg daarna een click event listener toe aan elke .favorite-btn
   // De index i vertelt je welke Pokémon bij welke knop hoort: items[i].name
-  document.querySelectorAll('.favorite-btn').forEach((btn, i) => {
+  document.querySelectorAll('.favorite-btn').forEach((btn, index) => {
     btn.addEventListener('click', () => {
-      const name = items[i].name;
+      const name = items[index].name;
 
       // Bonus: als de Pokémon al favoriet is, verwijder hem
       // Anders voeg je hem toe
