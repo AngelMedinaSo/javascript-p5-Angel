@@ -60,7 +60,7 @@ const showItems = (items) => {
 document.querySelector('#loading').textContent = 'Laden...';
 
 fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
-  .then(Response => Response.json())
+  .then(response => response.json())
   .then(data => {
     document.querySelector('#loading').textContent = '';
 
